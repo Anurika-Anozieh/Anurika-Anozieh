@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+</head>
+
+<body>
+	<div>
+		<div>
+			<select name="" id="selectInput" onchange="pageChanged()">
+				<option value="ASTHMA.html">
+					ASTHMA
+				</option>
+				<option value="CATARRH.html">
+					CATARRH
+				</option>
+				<option value="MALARIA.html">
+					MALARIA
+				</option>
+				<option value="TETANUS.html">
+					TETANUS
+				</option>
+			</select>
+		</div>
+
+		<div id="pages" style="width: 1000px; height: 1000px">
+			<iframe src="ASTHMA.html" id="iframe" style="width: 1000px; height: 1000px"></iframe>
+		</div>
+	</div>
+	<script>
+		function pageChanged(){
+			var e = document.getElementById("selectInput");
+			var selectedPage = e.options[e.selectedIndex].value;
+
+			var iframe = document.getElementById("iframe");
+			iframe.src = selectedPage
+		}
+	</script>
+</body>
+</html>
